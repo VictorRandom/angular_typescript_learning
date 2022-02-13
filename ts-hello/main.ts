@@ -66,6 +66,7 @@ let doLog = (message) => console.log(message);
 */
 
 
+/*
 class Point {
     // private x: number;
     // private y: number;
@@ -111,3 +112,10 @@ point.draw();
 //     x: 1,
 //     y: 2
 // })
+*/
+
+
+import { Point } from './point';
+
+let point = new Point(1, 2);
+point.draw();
