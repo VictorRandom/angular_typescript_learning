@@ -67,25 +67,35 @@ let doLog = (message) => console.log(message);
 
 
 class Point {
-    x: number;
-    y: number;
+    // private x: number;
+    // private y: number;
 
-    constructor(x?: number, y?: number){
-        this.x = x;
-        this.y = y;
+    constructor(private _x?: number, private _y?: number){
+        // this.x = x;
+        // this.y = y;
     }
 
     draw() {
-        console.log("X: " + this.x + ", Y: " + this.y);
+        console.log("X: " + this._x + ", Y: " + this._y);
     }
 
-    getDistance(another: Point){
-        //...
+    get X(){
+        return this._x;
+    }
+
+    set X(value){
+        if (value < 0)
+            throw new Error('value connot be less than 0.');
+
+            this._x = value;
     }
 }
 
-let point = new Point(1);
-//point.x = 1;
+let point = new Point(1, 2);
+let x = point.X;
+point.X = 10;
+point.draw();
+// point.x = 1;
 //point.y = 2;
 point.draw();
 
