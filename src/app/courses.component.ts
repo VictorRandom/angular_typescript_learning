@@ -26,8 +26,11 @@ export class CoursesComponent {
     courses;
    
 
-    constructor(){
-        let service = new CoursesService();
+    constructor(service: CoursesService){
+    
+        // let service = new CoursesService();
+        // passou a variavel para o parametro do construtor
+        
         this.courses = service.getCourses();
     }
 
