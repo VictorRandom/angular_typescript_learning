@@ -1,3 +1,4 @@
+import { CoursesService } from './courses.service';
 
 import { Component } from '@angular/core';
 
@@ -19,12 +20,18 @@ import { Component } from '@angular/core';
 export class CoursesComponent {
 
     title = 'List of courses';
-
     getTitle(){
         return this.title;
     }
-
     courses;
+   
+
+    constructor(){
+        let service = new CoursesService();
+        this.courses = service.getCourses();
+    }
+
+    //passou para o service
     // courses = ['course1', 'course2', 'course3'];
 
     //Logic for calling an HTTP service
