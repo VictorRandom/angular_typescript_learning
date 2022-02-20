@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
         <h2>Title: {{ getTitle() }}</h2>
         <ul>
             <!-- *ngfor é como um foreach -->
-            <li *ngFor="let course of courses">{{ course }}</li>
+            <li *ngFor="let course of courses">
+                {{ course }}
+            </li>
         </ul>
         ` 
 })
@@ -22,6 +24,8 @@ export class CoursesComponent {
         return this.title;
     }
 
-    courses = ['course1', 'course2', 'course3'];
+    courses;
+    // courses = ['course1', 'course2', 'course3'];
 
+    //Logic for calling an HTTP service
 }
